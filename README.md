@@ -1,53 +1,150 @@
-markdown
-Copy code
-Docker & Docker Compose Cheat Sheet
+# Docker & Docker Compose Cheat Sheet
 
-Introduction
+## Introduction
 
 Docker is a powerful tool that allows developers to create, deploy, and run applications in containers. It simplifies the process of managing dependencies and ensures that your application runs the same in any environment. Docker Compose, on the other hand, is a tool for defining and running multi-container Docker applications. This cheat sheet is designed for beginners and early programmers to get started with Docker and Docker Compose.
 
 ---
 
-Docker Commands
+## Docker Commands
 
-Basic Commands
+### Basic Commands
 
-docker version
-  Displays the Docker version installed on your system.
-bash
+- `docker version`  Displays the Docker version installed on your system.
+  ```bash
   docker version
-docker info
-Shows system-wide information about Docker.
+        Client:
+         Version:           26.1.4
+         API version:       1.45
+         Go version:        go1.21.11
+         Git commit:        5650f9b
+         Built:             Wed Jun  5 11:26:02 2024
+         OS/Arch:           darwin/arm64
+         Context:           desktop-linux
+        
+        Server: Docker Desktop 4.31.0 (153195)
+         Engine:
+          Version:          26.1.4
+          API version:      1.45 (minimum version 1.24)
+          Go version:       go1.21.11
+          Git commit:       de5c9cf
+          Built:            Wed Jun  5 11:29:12 2024
+          OS/Arch:          linux/arm64
+          Experimental:     false
+         containerd:
+          Version:          1.6.33
+          GitCommit:        d2d58213f83a351ca8f528a95fbd145f5654e957
+         runc:
+          Version:          1.1.12
+          GitCommit:        v1.1.12-0-g51d5e94
+         docker-init:
+          Version:          0.19.0
+          GitCommit:        de40ad0
+  
+- `docker info`  Shows system-wide information about Docker.
+```bash
+  docker info
+        Client:
+           Version:    26.1.4
+           Context:    desktop-linux
+           Debug Mode: false
+           Plugins:
+            buildx: Docker Buildx (Docker Inc.)
+              Version:  v0.14.1-desktop.1
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-buildx
+            compose: Docker Compose (Docker Inc.)
+              Version:  v2.27.1-desktop.1
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-compose
+            debug: Get a shell into any image or container (Docker Inc.)
+              Version:  0.0.32
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-debug
+            dev: Docker Dev Environments (Docker Inc.)
+              Version:  v0.1.2
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-dev
+            extension: Manages Docker extensions (Docker Inc.)
+              Version:  v0.2.24
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-extension
+            feedback: Provide feedback, right in your terminal! (Docker Inc.)
+              Version:  v1.0.5
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-feedback
+            init: Creates Docker-related starter files for your project (Docker Inc.)
+              Version:  v1.2.0
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-init
+            sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+              Version:  0.6.0
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-sbom
+            scout: Docker Scout (Docker Inc.)
+              Version:  v1.9.3
+              Path:     /Users/{youruser}/.docker/cli-plugins/docker-scout
 
-bash
-Copy code
-docker info
-docker help
+          Server:
+               Containers: 13
+                Running: 1
+                Paused: 0
+                Stopped: 12
+               Images: 26
+               Server Version: 26.1.4
+               Storage Driver: overlay2
+                Backing Filesystem: extfs
+                Supports d_type: true
+                Using metacopy: false
+                Native Overlay Diff: true
+                userxattr: false
+               Logging Driver: json-file
+               Cgroup Driver: cgroupfs
+               Cgroup Version: 2
+               Plugins:
+                Volume: local
+                Network: bridge host ipvlan macvlan null overlay
+                Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+               Swarm: inactive
+               Runtimes: io.containerd.runc.v2 runc
+               Default Runtime: runc
+               Init Binary: docker-init
+               containerd version: d2d58213f83a351ca8f528a95fbd145f5654e957
+               runc version: v1.1.12-0-g51d5e94
+               init version: de40ad0
+               Security Options:
+                seccomp
+                 Profile: unconfined
+                cgroupns
+               Kernel Version: 6.6.31-linuxkit
+               Operating System: Docker Desktop
+               OSType: linux
+               Architecture: aarch64
+               CPUs: 4
+               Total Memory: 7.658GiB
+               Name: docker-desktop
+               ID: 16d098b2-0c46-45c0-9131-3bbf94e8ee94
+               Docker Root Dir: /var/lib/docker
+               Debug Mode: false
+               HTTP Proxy: http.docker.internal:3128
+               HTTPS Proxy: http.docker.internal:3128
+               No Proxy: hubproxy.docker.internal
+               Labels:
+                com.docker.desktop.address=unix:///Users/ansari/Library/Containers/com.docker.docker/Data/docker-cli.sock
+               Experimental: false
+               Insecure Registries:
+                hubproxy.docker.internal:5555
+                127.0.0.0/8
+               Live Restore Enabled: false
+              
+              WARNING: daemon is not using the default seccomp profile
+
+`docker help`
 Lists available Docker commands and options.
 
-bash
-Copy code
-docker help
-Container Management
-docker run
+`docker run`
 Creates and starts a container from an image.
 
-bash
-Copy code
-docker run <image_name>
+`docker run <image_name>`
 docker ps
 Lists all running containers.
 
-bash
-Copy code
-docker ps
-docker ps -a
+`docker ps -a`
 Lists all containers, including stopped ones.
 
-bash
-Copy code
-docker ps -a
-docker stop
+`docker stop`
 Stops a running container.
 
 bash
@@ -235,5 +332,6 @@ Follows log output.
 bash
 Copy code
 docker-compose logs -f
-Conclusion
+---
+## Conclusion
 This cheat sheet provides a basic overview of essential Docker and Docker Compose commands, helping you get started with containerized applications. Whether you're a beginner or an early programmer, these commands will serve as a handy reference as you dive into the world of Docker.
