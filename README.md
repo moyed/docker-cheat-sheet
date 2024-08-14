@@ -63,81 +63,33 @@ Docker is a powerful tool that allows developers to create, deploy, and run appl
 - `docker network prune` Removes all unused networks.
 
 ## Docker Compose Commands
-Basic Commands
-docker-compose version
-Displays the Docker Compose version installed on your system.
+### Basic Commands
+- `docker-compose version` Displays the Docker Compose version installed on your system.
 
-bash
-Copy code
-docker-compose version
-docker-compose up
-Builds, (re)creates, starts, and attaches to containers for a service.
+- `docker-compose up` Builds, (re)creates, starts, and attaches to containers for a service.
 
-bash
-Copy code
-docker-compose up
-docker-compose down
-Stops and removes containers, networks, images, and volumes.
+- `docker-compose down` Stops and removes containers, networks, images, and volumes.
 
-bash
-Copy code
-docker-compose down
-docker-compose start
-Starts existing containers for a service.
+- `docker-compose start` Starts existing containers for a service.
 
-bash
-Copy code
-docker-compose start
-docker-compose stop
-Stops running containers without removing them.
+- `docker-compose stop` Stops running containers without removing them.
 
-bash
-Copy code
-docker-compose stop
-docker-compose restart
-Restarts containers.
+- `docker-compose restart` Restarts containers.
 
-bash
-Copy code
-docker-compose restart
-docker-compose build
-Builds or rebuilds services.
+- `docker-compose build` Builds or rebuilds services.
 
-bash
-Copy code
-docker-compose build
-Managing Containers
-docker-compose ps
-Lists containers.
+### Managing Containers
+- `docker-compose ps` Lists containers.
 
-bash
-Copy code
-docker-compose ps
-docker-compose exec
-Executes a command in a running container.
+- `docker-compose exec <service_name> <command>` Executes a command in a running container.
 
-bash
-Copy code
-docker-compose exec <service_name> <command>
-Docker Compose Cleanup Commands
-docker-compose rm
-Removes stopped service containers.
+### Docker Compose Cleanup Commands
+- `docker-compose rm` Removes stopped service containers.
 
-bash
-Copy code
-docker-compose rm
-docker-compose logs
-Displays logs from services.
+- `docker-compose logs` Displays logs from services.
 
-bash
-Copy code
-docker-compose logs
-docker-compose logs -f
-Follows log output.
+- `docker-compose logs -f` Follows log output.
 
-bash
-Copy code
-docker-compose logs -f
 ---
 ## Conclusion
 This cheat sheet provides a basic overview of essential Docker and Docker Compose commands, helping you get started with containerized applications. Whether you're a beginner or an early programmer, these commands will serve as a handy reference as you dive into the world of Docker.
